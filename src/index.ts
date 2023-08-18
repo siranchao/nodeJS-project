@@ -1,27 +1,38 @@
 import express from 'express'
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
+import cors from 'cors';
 
-//import task routes
+import notFound from './middleware/notFound';
+import errorHandler from './middleware/errorHandler';
+
+//import Task-manager routes
 import taskRoutes from './taskManger/routes/task';
+
 
 //setup server app
 const app: express.Application = express();
-const PORT: number = 3000;
-
+const PORT: string | number = process.env.PORT || 3000;
 dotenv.config();
+
 
 //middleware
 app.use(express.json());
+app.use(cors());
 
 
 //main route config
-
 app.get('/', (req: express.Request, res: express.Response) => {
-    res.send('4 in 1 nodeJS project');
+    res.send('4 in 1 nodeJS project - server is running');
 })
 
 app.use('/api/taskManager', taskRoutes);
+
+
+//handle exceptions
+app.use(notFound);
+app.use(errorHandler);
+
 
 
 
