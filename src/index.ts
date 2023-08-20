@@ -8,7 +8,7 @@ import errorHandler from './middleware/errorHandler';
 
 //import Task-manager routes
 import taskRoutes from './taskManger/routes/task';
-
+import productRoutes from './storeApi/routes/products';
 
 //setup server app
 const app: express.Application = express();
@@ -27,6 +27,8 @@ app.get('/', (req: express.Request, res: express.Response) => {
 })
 
 app.use('/api/taskManager', taskRoutes);
+
+app.use('/api/products', productRoutes);
 
 
 //handle exceptions
