@@ -15,15 +15,5 @@ router.route('/getAll/static').get(getAllStaticProducts)
 
 router.route('/createMany').post(uploadProducts)
 
-// router.route('/createOne').post(createTask)
-
-// router.route('/getOne/:id').get(getTask)
-
-// router.route('/updateOne/:id').patch(updateTask)
-
-// router.route('/deleteOne/:id').delete(deleteTask)
-
-
-
 
 export default router;

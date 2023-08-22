@@ -47,6 +47,26 @@
 - **Endpoint:** `/api/taskManager/deleteOne/:id`
 - **Description:** Delete a specific task by its unique ID.
 
+## :pencil: REST API Endpoints - Product Manager
+
+### Query all products based on query parameters
+
+- **HTTP Method:** GET
+- **Endpoint:** `/api/products/getAll`
+- **Description:** Get a list of products based on various query parameters.
+
+  **Query Parameters:**
+
+  - `featured` (boolean): Filter by featured status (e.g., `featured=false`)
+  - `company` (string): Filter by company name (e.g., `company=IKEA`)
+  - `sort` (string): Sort products (e.g., `sort=name`)
+  - `fields` (string): Specify fields to include in the response (e.g., `fields=name,price`)
+  - `page` (integer): Page number for pagination (e.g., `page=1`)
+  - `limit` (integer): Number of products per page (e.g., `limit=12`)
+  - `numericFilters` (string): Filter products with numeric values (e.g., `numericFilters=rating`)
+  - `max` (numeric): Set maximum value for numeric filtering (e.g., `max=5`)
+  - `min` (numeric): Set minimum value for numeric filtering (e.g., `min=4`)
+
 ## :book: Usage
 
 To use these endpoints, make sure to replace `:id` with the actual ID of the task you want to perform the action on. For example, to get a specific task by its ID, make a GET request to `/api/taskManager/getOne/123`.
