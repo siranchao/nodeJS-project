@@ -6,9 +6,10 @@ import cors from 'cors';
 import notFound from './middleware/notFound';
 import errorHandler from './middleware/errorHandler';
 
-//import Task-manager routes
+//import Project routes
 import taskRoutes from './taskManger/routes/task';
 import productRoutes from './storeApi/routes/products';
+import authRoutes from './jwtApi/routes/auth'
 
 //setup server app
 const app: express.Application = express();
@@ -29,6 +30,8 @@ app.get('/', (req: express.Request, res: express.Response) => {
 app.use('/api/taskManager', taskRoutes);
 
 app.use('/api/products', productRoutes);
+
+app.use('/api/auth', authRoutes);
 
 
 //handle exceptions
