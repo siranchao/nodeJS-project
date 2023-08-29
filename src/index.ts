@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import cors from 'cors';
 
+//import middleware
 import notFound from './middleware/notFound';
 import errorHandler from './middleware/errorHandler';
 
